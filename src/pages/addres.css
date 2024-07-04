@@ -1,0 +1,30 @@
+.con{
+  width: 200px;
+  border: 1px solid #777777aa;
+  height: 200px;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  background: #f7f7f7b3;
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  margin-left: 80px;
+  cursor: pointer;
+}
+.con:hover{
+  border: 1px solid red;
+  transform: scale(1.06);
+}
+.box{
+margin-top: 100px;
+
+}
+
+.plus{
+  margin-top: 80px;
+  
+}
+
+.res{
+  display: flex;
+  justify-content: space-between;
+}

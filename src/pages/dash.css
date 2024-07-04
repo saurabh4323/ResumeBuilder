@@ -1,0 +1,16 @@
+.center{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  
+}
+.center h1{
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 40px;
+}
+.dash{
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
