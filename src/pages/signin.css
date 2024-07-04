@@ -1,0 +1,7 @@
+.sign{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 120px;
+  box-shadow:  #000;
+}
