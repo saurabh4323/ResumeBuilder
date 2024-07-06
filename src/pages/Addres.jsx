@@ -17,6 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Route from "../../routes/Route";
 import { useUser } from "@clerk/clerk-react";
+import { Link } from "react-router-dom";
 
 const Addres = () => {
   const [restit, setRestit] = useState(null);
@@ -80,9 +81,11 @@ const Addres = () => {
               </div>
             </div>
             <DialogFooter>
-              <Button disabled={!restit} onClick={click} type="submit">
-                Create
-              </Button>
+              <Link to={"/dash/:resid/edit"}>
+                <Button disabled={!restit} onClick={click} type="submit">
+                  Create
+                </Button>
+              </Link>
             </DialogFooter>
           </DialogContent>
         </Dialog>

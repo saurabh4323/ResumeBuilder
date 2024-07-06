@@ -1,7 +1,6 @@
 import React from "react";
 import "./Header.css";
 import { SignInButton, UserButton, useUser } from "@clerk/clerk-react";
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -12,7 +11,8 @@ const Header = () => {
     <div className="header">
       <div className="left">
         <div className="logo">
-          <img src="logo.svg" alt="logo" />
+          <img src="/logo.svg" alt="logo" />{" "}
+          {/* Correct path to public directory */}
         </div>
       </div>
 

@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import { ClerkProvider } from "@clerk/clerk-react";
 import Signin from "./pages/Signin.jsx";
 import Home from "./pages/Home.jsx";
 import Dash from "./pages/Dash.jsx";
+import Edit from "./pages/[Resid]/edit/Edit.jsx";
+
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -15,21 +16,25 @@ if (!PUBLISHABLE_KEY) {
 
 const router = createBrowserRouter([
   {
-    element: <App></App>,
+    element: <App />,
     children: [
       {
         path: "/dash",
-        element: <Dash></Dash>,
+        element: <Dash />,
+      },
+      {
+        path: "/dash/:Resid/edit",
+        element: <Edit />,
       },
     ],
   },
   {
     path: "/",
-    element: <Home></Home>,
+    element: <Home />,
   },
   {
     path: "/sign",
-    element: <Signin></Signin>,
+    element: <Signin />,
   },
 ]);
 
