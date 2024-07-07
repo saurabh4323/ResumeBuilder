@@ -15,30 +15,30 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import Route from "../../routes/Route";
+import Route from "../../routes/Route"; // Adjust path if necessary
 import { useUser } from "@clerk/clerk-react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const Addres = () => {
   const [restit, setRestit] = useState(null);
   const { user } = useUser();
+  const navigate = useNavigate();
 
   const click = async () => {
     const id = uuidv4();
     const data = {
-      data: {
-        title: restit,
-        username: user?.fullName,
-        email: user?.primaryEmailAddress?.emailAddress,
-        resumeid: id,
-      },
+      title: restit,
+      username: user?.fullName,
+      email: user?.primaryEmailAddress?.emailAddress,
+      resumeid: id,
     };
 
     console.log("Payload data:", data);
 
     try {
-      const response = await Route.Createresume(data);
+      const response = await Route.CreateResume({ data }); // Ensure 'data' is wrapped properly
       console.log("Response:", response);
+      navigate("/dash/" + id + "/edit");
     } catch (error) {
       console.error("Error:", error.response?.data || error.message);
     }
@@ -48,19 +48,17 @@ const Addres = () => {
     <div className="res">
       <div className="box">
         <Dialog>
-          <DialogTrigger asChild>
-            <Button variant="outline">
-              <div className="con">
-                <SquarePlus
-                  className="plus"
-                  size={20}
-                  color="#000"
-                  strokeWidth={0.75}
-                />
-              </div>
-            </Button>
+          <DialogTrigger>
+            <div className="con">
+              <SquarePlus
+                className="plus"
+                size={24}
+                color="#000"
+                strokeWidth={0.75}
+              />
+            </div>
           </DialogTrigger>
-          <DialogContent className="sm:max-w-[425px]">
+          <DialogContent>
             <DialogHeader>
               <DialogTitle>Give name</DialogTitle>
               <DialogDescription>
@@ -81,11 +79,9 @@ const Addres = () => {
               </div>
             </div>
             <DialogFooter>
-              <Link to={"/dash/:resid/edit"}>
-                <Button disabled={!restit} onClick={click} type="submit">
-                  Create
-                </Button>
-              </Link>
+              <Button disabled={!restit} onClick={click} type="submit">
+                Create
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
