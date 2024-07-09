@@ -1,10 +1,13 @@
-/* dash.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;1,700&display=swap');
 .dash {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  background-color: #F9F6F6;
+  margin-bottom: 20px;
+  min-height: 96vh;
 }
 
 .center {
@@ -13,7 +16,8 @@
 }
 
 .center h1 {
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;;
+ 
   font-weight: 600;
   color: #333;
   font-size: 40px;
@@ -23,11 +27,12 @@
 .addres-container {
   margin-top: 20px;
   display: flex;
+  
   justify-content: center;
-  transform: translateX(20px); /* Example transform effect */
+  transform: translateX(20px);
 }
 
-.resumes-list {
+/* .resumes-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 20px;
@@ -62,4 +67,40 @@
 .rescon-box a:hover {
   text-decoration: underline;
   color: #555;
+} */
+ */
+
+
+.center {
+  text-align: center;
+}
+
+.addres-container {
+  margin-bottom: 20px;
+}
+
+.resumes-list {
+
+  
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  gap: 100px;
+}
+
+.rescon-box {
+
+  cursor: pointer;
+  gap: 100px;
+  width: 150px;
+  height: 190px;
+  background-color: #fff;
+  border-radius: 8px;
+  border: 1px solid #48CF72;
+  box-shadow: 0 1px 2px #48CF72;
+  padding: 20px;
+}
+.pen{
+  margin-left: 38px;
+  margin-top: 40px;
 }

@@ -4,6 +4,7 @@ import Route from "../../routes/Route";
 import Addres from "./Addres";
 import Rescon from "./Rescon";
 import "./dash.css";
+import Footer from "./Footer";
 
 const Dash = () => {
   const { user } = useUser();
@@ -41,21 +42,29 @@ const Dash = () => {
   };
 
   return (
-    <div className="dash">
-      <div className="center">
-        <h1>My Collection</h1>
+    <>
+      <div className="dash">
+        <div className="center">
+          <h1>My Resume</h1>
+        </div>
+        <div className="addres-container">
+          <Addres />
+        </div>
+        <div className="resumes-list">
+          {resumes.map((resume) => (
+            <div key={resume.id} className="rescon-box">
+              <img
+                className="pen"
+                src="https://img.icons8.com/?size=40&id=DJdAy4c4Jd37&format=png&color=000000"
+                alt=""
+              ></img>
+              <Rescon resume={resume} />
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="addres-container">
-        <Addres />
-      </div>
-      <div className="resumes-list">
-        {resumes.map((resume) => (
-          <div key={resume.id} className="rescon-box">
-            <Rescon resume={resume} />
-          </div>
-        ))}
-      </div>
-    </div>
+      <Footer></Footer>
+    </>
   );
 };
 

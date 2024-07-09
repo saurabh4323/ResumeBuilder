@@ -3,8 +3,10 @@ import React from "react";
 import "./signin.css";
 const Signin = () => {
   return (
-    <div className="sign">
-      <SignIn></SignIn>
+    <div className="containe">
+      <div className="sign">
+        <SignIn></SignIn>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,12 @@
-.sign{
+.containe {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-top: 120px;
-  box-shadow:  #000;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Full height of the viewport */
+}
+
+.sign {
+ 
+  
+  
 }

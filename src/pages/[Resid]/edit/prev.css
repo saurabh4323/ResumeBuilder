@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.respreview {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+/* Section Styles */
+.personal, .des, .edu, .expe, .skill, .project, .soci {
+  margin-bottom: 30px;
+}
+
+.personal h1, .sk h1, .expe h3, .edu h3, .des p, .project h3, .soci h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.personal h1 {
+  font-size: 2em;
+  color: #ff6666;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #666666;
+  border-bottom: 2px solid #ff6666;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+
+p {
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Personal Info */
+.personal h1, .personal p {
+  text-align: center;
+}
+
+/* Experience, Education, Skills, Projects, Social */
+.expe div, .edu div, .skill div, .project div, .soci div {
+  margin-bottom: 15px;
+}
+
+.expe h3, .edu h3, .skill h3, .project h3, .soci h3 {
+  font-size: 1.2em;
+  color: #333;
+}
+
+.expe p, .edu p, .skill p, .project p, .soci p {
+  margin: 5px 0;
+}
+
+/* Skills */
+.sk {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sk h1 {
+  font-size: 1em;
+}
+
+.sk h1:first-child {
+  color: #666;
+}
+
+.sk h1:last-child {
+  color: #ff6666;
+}
+
+.skill {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill .sk {
+  width: 48%;
+  margin: 1%;
+}
+
+/* Projects, Social */
+.project h3, .soci h3 {
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .skill .sk {
+    width: 100%;
+  }
+}

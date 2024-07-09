@@ -1,19 +1,24 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Route from "../../../../routes/Route";
-
-import { useUser } from "@clerk/clerk-react";
+import React, { useState } from "react";
+import { ResumeInfoContext } from "./ResumeInfoContext";
+import Resform from "./Resform";
+import ResPreview from "./Respreview";
+import Dummy from "./Dummy";
+import "./Edit.css";
 
 const Edit = () => {
-  const params = useParams();
-  useEffect(() => {
-    console.log(params.Resid);
-  });
+  const [resinfo, setResInfo] = useState(Dummy);
 
   return (
-    <div>
-      <h1>vvvvvyu</h1>
-    </div>
+    <ResumeInfoContext.Provider value={{ resinfo, setResInfo }}>
+      <div className="edit">
+        <div className="forms">
+          <Resform />
+        </div>
+        <div className="prev">
+          <ResPreview />
+        </div>
+      </div>
+    </ResumeInfoContext.Provider>
   );
 };
 
